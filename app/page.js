@@ -7,13 +7,10 @@ export default function Home() {
       padding:"40px"
     }}>
       <h1>🚀 MarketBrain</h1>
-
       <h2>Live Market Dashboard</h2>
 
-      <div>NIFTY : Loading...</div>
-      <div>BANKNIFTY : Loading...</div>
-
-      <br/>
+      <p>NIFTY : Loading...</p>
+      <p>BANKNIFTY : Loading...</p>
 
       <button>
         Connect Angel One
