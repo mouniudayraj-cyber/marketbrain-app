@@ -1,3 +1,7 @@
-<a href="/api/auth/angelone">
-  <button>Connect Angel One</button>
-</a>
+export default function Home() {
+  return (
+    <div>
+      <h1>MarketBrain Running 🚀</h1>
+    </div>
+  );
+}
