@@ -1,6 +1,6 @@
 export async function GET() {
   return Response.json({
-    success: true,
-    message: "MarketBrain API Working"
+    status: "ok",
+    message: "MarketBrain API Running"
   });
 }
