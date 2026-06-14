@@ -25,8 +25,9 @@ export default function Home() {
 
       {data ? (
         <>
-          <p>Status: {data.status}</p>
-          <p>{data.message}</p>
+          <p>NIFTY: {data?.nifty}</p>
+          <p>BANKNIFTY: {data?.banknifty}</p>
+          <p>VIX: {data?.vix}</p>
         </>
       ) : (
         <p>Loading API...</p>
