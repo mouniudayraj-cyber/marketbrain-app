@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [data, setData] = useState(null);
 
+  const connectAngelOne = () => {
+    alert("Button Working");
+  };
+
   useEffect(() => {
     fetch("/api/market")
       .then((res) => res.json())
@@ -34,11 +38,8 @@ export default function Home() {
       )}
 
       <button onClick={connectAngelOne}>
-  Connect Angel One
-</button>
-      const connectAngelOne = () => {
-  alert("Button Working");
-};
+        Connect Angel One
+      </button>
     </main>
   );
 }
