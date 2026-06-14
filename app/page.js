@@ -33,7 +33,12 @@ export default function Home() {
         <p>Loading API...</p>
       )}
 
-      <button>Connect Angel One</button>
+      <button onClick={connectAngelOne}>
+  Connect Angel One
+</button>
+      const connectAngelOne = () => {
+  alert("Button Working");
+};
     </main>
   );
 }
