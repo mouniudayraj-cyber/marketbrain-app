@@ -6,8 +6,9 @@ export default function Home() {
   const [data, setData] = useState(null);
 
   const connectAngelOne = () => {
-    alert("Button Working");
-  };
+  window.location.href =
+    "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0";
+};
 
   useEffect(() => {
     fetch("/api/market")
