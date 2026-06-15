@@ -38,8 +38,7 @@ export default function Home() {
       )}
 
       <button onClick={connectAngelOne}>
-        Connect Angel One
-      </button>
-    </main>
-  );
-}
+        window.open(
+  "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0",
+  "_self"
+);
