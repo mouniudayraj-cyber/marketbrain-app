@@ -6,14 +6,15 @@ export default function Home() {
   const [data, setData] = useState(null);
 
   const connectAngelOne = () => {
-  window.location.href =
-    "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0";
-};
+    window.location.href =
+      "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0";
+  };
 
   useEffect(() => {
     fetch("/api/market")
       .then((res) => res.json())
-      .then((json) => setData(json));
+      .then((json) => setData(json))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -30,16 +31,24 @@ export default function Home() {
 
       {data ? (
         <>
-          <p>NIFTY: {data?.nifty}</p>
-          <p>BANKNIFTY: {data?.banknifty}</p>
-          <p>VIX: {data?.vix}</p>
+          <p>NIFTY: {data.nifty}</p>
+          <p>BANKNIFTY: {data.banknifty}</p>
+          <p>VIX: {data.vix}</p>
         </>
       ) : (
         <p>Loading API...</p>
       )}
 
-      <button onClick={connectAngelOne}>
-        window.open(
-  "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0",
-  "_self"
-);
+      <button
+        onClick={connectAngelOne}
+        style={{
+          padding: "12px 20px",
+          marginTop: "20px",
+          cursor: "pointer",
+        }}
+      >
+        Connect Angel One
+      </button>
+    </main>
+  );
+}
