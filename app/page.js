@@ -5,25 +5,26 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [data, setData] = useState(null);
 
+  useEffect(() => {
+    fetch("/api/market")
+      .then((res) => res.json())
+      .then((json) => setData(json))
+      .catch((err) => console.log(err));
+  }, []);
+
   const connectAngelOne = () => {
     window.location.href =
       "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0";
   };
 
-  useEffect(() => {
-    fetch("/api/market")
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.error(err));
-  }, []);
-
   return (
     <main
       style={{
-        background: "#000",
+        backgroundColor: "#000",
         color: "#fff",
         minHeight: "100vh",
-        padding: "40px",
+        padding: "30px",
+        fontFamily: "Arial",
       }}
     >
       <h1>🚀 MarketBrain</h1>
@@ -36,15 +37,18 @@ export default function Home() {
           <p>VIX: {data.vix}</p>
         </>
       ) : (
-        <p>Loading API...</p>
+        <p>Loading Market Data...</p>
       )}
+
+      <br />
 
       <button
         onClick={connectAngelOne}
         style={{
           padding: "12px 20px",
-          marginTop: "20px",
+          fontSize: "16px",
           cursor: "pointer",
+          borderRadius: "8px",
         }}
       >
         Connect Angel One
