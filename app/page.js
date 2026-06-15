@@ -9,22 +9,21 @@ export default function Home() {
     fetch("/api/market")
       .then((res) => res.json())
       .then((json) => setData(json))
-      .catch((err) => console.log(err));
+      .catch(console.error);
   }, []);
 
   const connectAngelOne = () => {
     window.location.href =
-      "https://smartapi.angelone.in/publisher-login/?api_key=983mzMi0";
+      "https://smartapi.angelone.in/publisher-login?api_key=983mzMi0";
   };
 
   return (
     <main
       style={{
-        backgroundColor: "#000",
+        background: "#000",
         color: "#fff",
         minHeight: "100vh",
-        padding: "30px",
-        fontFamily: "Arial",
+        padding: "40px",
       }}
     >
       <h1>🚀 MarketBrain</h1>
@@ -37,10 +36,8 @@ export default function Home() {
           <p>VIX: {data.vix}</p>
         </>
       ) : (
-        <p>Loading Market Data...</p>
+        <p>Loading API...</p>
       )}
-
-      <br />
 
       <button
         onClick={connectAngelOne}
@@ -48,7 +45,7 @@ export default function Home() {
           padding: "12px 20px",
           fontSize: "16px",
           cursor: "pointer",
-          borderRadius: "8px",
+          marginTop: "20px",
         }}
       >
         Connect Angel One
